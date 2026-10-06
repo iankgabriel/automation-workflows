@@ -1,0 +1,147 @@
+{
+  "name": "Workflow 3.1 - Load Knowledge Base",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -48
+      ],
+      "id": "1254a0f5-771c-4ee2-b86a-06c7f1b8b1da",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a8e252a4-3e4d-4d0b-bfc1-75575100b517",
+              "name": "faqText",
+              "value": "Lumen Home Goods Frequently Asked Questions\n\nShipping: We ship to the United States and Canada. Standard shipping takes 5 to 7 business days and costs $6.99, or is free on orders over $75. Express shipping takes 2 to 3 business days and costs $14.99. Orders placed before 2 PM EST ship the same day.\n\nReturns and Exchanges: We accept returns within 30 days of delivery for a full refund, as long as the item is unused and in its original packaging. Custom or made-to-order furniture is final sale and cannot be returned. To start a return, email returns@lumenhomegoods.com with your order number.\n\nWarranty: All furniture comes with a 2-year limited warranty covering manufacturing defects. This warranty does not cover normal wear and tear, water damage, or damage from improper assembly.\n\nBusiness Hours: Our customer support team is available Monday through Friday, 9 AM to 6 PM EST. We are closed on major US holidays. Live chat on our website is available during these same hours.\n\nAssembly: Most furniture items require assembly. Assembly instructions and hardware are included in the box. Video assembly guides are available on our YouTube channel for our top 20 best-selling items.\n\nPrice Match: We offer price matching within 14 days of purchase if you find the identical item in stock at a lower price from a major competitor. Contact support with a link to the competitor's listing.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        -48
+      ],
+      "id": "23811d58-4ee8-4634-b6ab-201457ab2789",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "memoryKey": {
+          "__rl": true,
+          "value": "company_faq_demo",
+          "mode": "list"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.3,
+      "position": [
+        448,
+        -48
+      ],
+      "id": "72ab7bdd-f997-4754-92b7-ed47e6d1d360",
+      "name": "Simple Vector Store"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        592,
+        192
+      ],
+      "id": "821b9e26-ce4a-4e3d-96a8-44a0678dced9",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        464,
+        192
+      ],
+      "id": "600e849b-b6b5-420a-9c2a-2e5527f65923",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YOUR_GEMINI_CREDENTIAL_ID",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "81332eaf-c648-4cdd-a872-9cde93895dd3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "YOUR_N8N_INSTANCE_ID"
+  },
+  "nodeGroups": [],
+  "id": "EyLhk2DtuK64zmA8",
+  "tags": []
+}
