@@ -31,7 +31,7 @@ When someone fills out the form, they get a text and an email right away. The wo
 
 **Lead Capture Form**
 
-![Lead Capture Form](screenshots/lead-capture-form.jpg)
+![Lead Capture Form](screenshots/lead-capture-form.png)
 
 **Pipeline Board**
 
