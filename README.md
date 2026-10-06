@@ -1,6 +1,6 @@
 # Automation Workflows
 
-Twelve workflow automations I built across Make, n8n, Zapier, and GoHighLevel. Each folder has the problem it solves, how it works, screenshots, and the exported workflow file where the platform allows it.
+Workflow automations I've built across Make, n8n, Zapier, and GoHighLevel. Each folder has the problem it solves, how it works, screenshots, and the exported workflow file where the platform allows it.
 
 I'm Ian Kennedy Gabriel, an AI Automation Specialist at IKG Digital. Before automation, I spent 8 years in video editing and production, and I bring the same habits to every build: break the work into small steps, test the edge cases, and make sure it holds up before it goes live.
 
@@ -10,7 +10,7 @@ I'm Ian Kennedy Gabriel, an AI Automation Specialist at IKG Digital. Before auto
 
 ## Make
 
-Three workflows built in Make, using Routers for branching and the Iterator and Aggregator pair to combine data from more than one source.
+Workflows built in Make, using Routers for branching and the Iterator and Aggregator pair to combine data from more than one source.
 
 | Project | What it does |
 |---|---|
@@ -20,7 +20,7 @@ Three workflows built in Make, using Routers for branching and the Iterator and 
 
 ## n8n
 
-Three workflows built in n8n, starting with simple routing and ending with an AI agent that answers questions from its own knowledge base.
+Workflows built in n8n, ranging from simple routing to an AI agent that answers questions from its own knowledge base.
 
 | Project | What it does |
 |---|---|
@@ -30,7 +30,7 @@ Three workflows built in n8n, starting with simple routing and ending with an AI
 
 ## Zapier
 
-Three Zaps built with Paths, Filters, and Code by Zapier, solving the same kinds of problems within Zapier's more structured setup.
+Zaps built with Paths, Filters, and Code by Zapier, solving the same kinds of problems within Zapier's more structured setup.
 
 | Project | What it does |
 |---|---|
@@ -40,7 +40,7 @@ Three Zaps built with Paths, Filters, and Code by Zapier, solving the same kinds
 
 ## GoHighLevel
 
-Three GoHighLevel builds: lead follow-up driven by tags, a missed-call reply that changes with the time of day, and a Zapier connection that copies pipeline updates into a spreadsheet.
+GoHighLevel builds covering lead follow-up driven by tags, a missed-call reply that changes with the time of day, and a Zapier connection that copies pipeline updates into a spreadsheet.
 
 | Project | What it does |
 |---|---|

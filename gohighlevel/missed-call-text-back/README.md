@@ -21,7 +21,7 @@ Texts back every missed call within moments, with different wording during and a
 
 ## How I built it
 
-Unlike my other two GHL builds, this one branches on the time of day instead of tags. After a missed call, the workflow waits briefly, then a Condition step checks whether the call came in during business hours. Each branch sends its own text, creates the opportunity, and notifies the team. I also added a third branch for calls that don't match either condition, such as one that lands exactly on the cutoff time, so nothing falls through the gap.
+Unlike my other GHL builds, this one branches on the time of day instead of tags. After a missed call, the workflow waits briefly, then a Condition step checks whether the call came in during business hours. Each branch sends its own text, creates the opportunity, and notifies the team. I also added a third branch for calls that don't match either condition, such as one that lands exactly on the cutoff time, so nothing falls through the gap.
 
 ## Screenshots
 
